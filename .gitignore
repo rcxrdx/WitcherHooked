@@ -1,0 +1,6 @@
+Debug/
+Release/
+ipch/
+.vs/
+*.vcxproj.filters
+*.vcxproj.user
