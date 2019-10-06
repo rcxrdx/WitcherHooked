@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{23F8294F-3A82-466A-A51F-6665DB4C4C7C}</ProjectGuid>
+    <RootNamespace>Witcherhooked</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)Debug\$(ProjectName).dll" "$(SolutionDir)..\The Witcher Enhanced Edition\System\$(ProjectName).dll"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Hooks.cpp" />
+    <ClCompile Include="src\Lua\lua\lapi.cpp" />
+    <ClCompile Include="src\Lua\lua\lauxlib.cpp" />
+    <ClCompile Include="src\Lua\lua\lbaselib.cpp" />
+    <ClCompile Include="src\Lua\lua\lcode.cpp" />
+    <ClCompile Include="src\Lua\lua\ldblib.cpp" />
+    <ClCompile Include="src\Lua\lua\ldebug.cpp" />
+    <ClCompile Include="src\Lua\lua\ldo.cpp" />
+    <ClCompile Include="src\Lua\lua\ldump.cpp" />
+    <ClCompile Include="src\Lua\lua\lfunc.cpp" />
+    <ClCompile Include="src\Lua\lua\lgc.cpp" />
+    <ClCompile Include="src\Lua\lua\liolib.cpp" />
+    <ClCompile Include="src\Lua\lua\llex.cpp" />
+    <ClCompile Include="src\Lua\lua\lmathlib.cpp" />
+    <ClCompile Include="src\Lua\lua\lmem.cpp" />
+    <ClCompile Include="src\Lua\lua\loadlib.cpp" />
+    <ClCompile Include="src\Lua\lua\lobject.cpp" />
+    <ClCompile Include="src\Lua\lua\lopcodes.cpp" />
+    <ClCompile Include="src\Lua\lua\lparser.cpp" />
+    <ClCompile Include="src\Lua\lua\lstate.cpp" />
+    <ClCompile Include="src\Lua\lua\lstring.cpp" />
+    <ClCompile Include="src\Lua\lua\lstrlib.cpp" />
+    <ClCompile Include="src\Lua\lua\ltable.cpp" />
+    <ClCompile Include="src\Lua\lua\ltablib.cpp" />
+    <ClCompile Include="src\Lua\lua\ltests.cpp" />
+    <ClCompile Include="src\Lua\lua\ltm.cpp" />
+    <ClCompile Include="src\Lua\lua\lundump.cpp" />
+    <ClCompile Include="src\Lua\lua\lvm.cpp" />
+    <ClCompile Include="src\Lua\lua\lzio.cpp" />
+    <ClCompile Include="src\Lua\toluapp\tolua_event.cpp" />
+    <ClCompile Include="src\Lua\toluapp\tolua_is.cpp" />
+    <ClCompile Include="src\Lua\toluapp\tolua_map.cpp" />
+    <ClCompile Include="src\Lua\toluapp\tolua_push.cpp" />
+    <ClCompile Include="src\Lua\toluapp\tolua_to.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\memoryprotection.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Hooks.h" />
+    <ClInclude Include="src\jmphookedfunction.h" />
+    <ClInclude Include="src\Lua\lua\lapi.h" />
+    <ClInclude Include="src\Lua\lua\lauxlib.h" />
+    <ClInclude Include="src\Lua\lua\lcode.h" />
+    <ClInclude Include="src\Lua\lua\ldebug.h" />
+    <ClInclude Include="src\Lua\lua\ldo.h" />
+    <ClInclude Include="src\Lua\lua\lfunc.h" />
+    <ClInclude Include="src\Lua\lua\lgc.h" />
+    <ClInclude Include="src\Lua\lua\llex.h" />
+    <ClInclude Include="src\Lua\lua\llimits.h" />
+    <ClInclude Include="src\Lua\lua\lmem.h" />
+    <ClInclude Include="src\Lua\lua\lobject.h" />
+    <ClInclude Include="src\Lua\lua\lopcodes.h" />
+    <ClInclude Include="src\Lua\lua\lparser.h" />
+    <ClInclude Include="src\Lua\lua\lstate.h" />
+    <ClInclude Include="src\Lua\lua\lstring.h" />
+    <ClInclude Include="src\Lua\lua\ltable.h" />
+    <ClInclude Include="src\Lua\lua\ltm.h" />
+    <ClInclude Include="src\Lua\lua\lua.h" />
+    <ClInclude Include="src\Lua\lua\lualib.h" />
+    <ClInclude Include="src\Lua\lua\lundump.h" />
+    <ClInclude Include="src\Lua\lua\lvm.h" />
+    <ClInclude Include="src\Lua\lua\lzio.h" />
+    <ClInclude Include="src\Lua\toluapp\tolua++.h" />
+    <ClInclude Include="src\Lua\toluapp\tolua_event.h" />
+    <ClInclude Include="src\memoryprotection.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
